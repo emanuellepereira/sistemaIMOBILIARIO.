@@ -75,7 +75,7 @@ string Apartamento::getPosicao() {
 	toStringEndereco();
 }*/
 
-void Apartamento::ExibirApartamento(){
+void Apartamento::Exibir(){
     string categoria;
     if(tipoOferta==1){
         categoria = "A venda";
@@ -85,7 +85,7 @@ void Apartamento::ExibirApartamento(){
 
     cout << "Titulo: " << tituloAnuncio << endl;
     cout << "Categoria: " << categoria << endl;
-    cout << "Endereco: " << toStringEndereco() << endl;
+    cout << "Endereco: " << Endereco.toStringEndereco() << endl;
     cout << "Preco: " << preco << endl;
     cout << "Valor do Condominio: " << valorCondominio << endl;
     cout << "Area: " << area << "m²" << endl;
@@ -94,7 +94,7 @@ void Apartamento::ExibirApartamento(){
     cout << "Posicao: " << posicao << endl;
 }
 
-void Apartamento::EditarApartamento(){
+void Apartamento::Editar(){
 
      int opcao1, x=0;
 

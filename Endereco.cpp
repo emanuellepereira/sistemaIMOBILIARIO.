@@ -67,3 +67,4 @@ string Endereco::getCidade() {
 void Endereco::toStringEndereco() {
 	cout << "Endereco: " << rua << ", " << numero << ", " << bairro << "; " << cep << "; " << Cidade << endl;
 }
+

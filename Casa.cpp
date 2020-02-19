@@ -59,7 +59,7 @@ double Casa::getAreaConstruida() {
 	toStringEndereco();
 }*/
 
-void Casa::ExibirTerreno(){
+void Casa::Exibir(){
     string categoria;
     if(tipoOferta==1){
         categoria = "A venda";
@@ -69,13 +69,13 @@ void Casa::ExibirTerreno(){
 
     cout << "Titulo: " << tituloAnuncio << endl;
     cout << "Categoria: " << categoria << endl;
-    cout << "Endereco: " << toStringEndereco() << endl;
+    cout << "Endereco: " << Endereco.toStringEndereco() << endl;
     cout << "Numero de pavimentos: " << numeroPavimentos << endl;
     cout << "Area do terreno: " << areaTerreno << "m²" << endl;
     cout << "Area construida: " << areaConstruida << "m²" << endl;
 }
 
-void Casa::EditarCasa(){
+void Casa::Editar(){
 
      int opcao1, x=0;
 

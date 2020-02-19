@@ -1,4 +1,6 @@
 #include <string>
+#include "Endereco.h"
+#include "Imovel.h"
 
 using namespace std;
 
@@ -26,5 +28,6 @@ class Endereco{
         string getCep();
         string getCidade();
 
-        void toStringEndereco();
+       void toStringEndereco();
+
 };

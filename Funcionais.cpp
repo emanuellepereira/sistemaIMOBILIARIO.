@@ -119,15 +119,29 @@ vector <Imovel*> Funcionais::Buscar(){
 void Funcionais::Remover()
 {
     vector <Imovel*> Imoveis;
-    int indice;
+    int indice, TipoImovel;;
     unsigned int i;
     vector <int> aux;
     Imoveis = Buscar();
 
     for(i = 0; i < imoveis01.size(); i++){
 
+        cout << "Selecione o tipo de imovel que deseja remover: " << endl;
+        cout << "1. Casa" << endl;
+        cout << "2. Apartamento" << endl;
+        cout << "3. Terreno" << endl;
+        cin >> TipoImovel;
+
+        if(TipoImovel==1){
         cout << "Imovel: " << endl;
-        Imoveis[i] -> exibir();
+        Imoveis[i] -> ExibirCasa();
+        }if(TipoImovel==2){
+        cout << "Imovel: " << endl;
+        Imoveis[i] -> ExibirApartamento();
+        }if(TipoImovel==3){
+        cout << "Imovel: " << endl;
+        Imoveis[i] -> ExibirTerreno();
+        }
     }
     cout << "Digite o indice para remover" << endl;
     cin >> indice;
@@ -145,27 +159,61 @@ void Funcionais::Editar(){
 
     vector <Imovel*> Imoveis;
     int indice;
-    unsigned int i;
+    unsigned int j;
     vector <int> aux;
     Imoveis = Buscar();
-    for(i=0; i<Imoveis.size(); i++){
-        cout << "Imovel: " << endl;
-        Imoveis[i] -> Exibir();
-    }
+    int TipoImovel;
+
+        cout << "Deseja editar que tipo de imovel?" << endl;
+        cout << "1. Casa" << endl;
+        cout << "2. Apartamento" << endl;
+        cout << "3. Terreno" << endl;
+        cin >> TipoImovel;
+
+        if(TipoImovel==1){
+           for(j=0; j<imoveis.size(); j++){
+            imoveis[j]->ExibirCasa();
+            cout << "\n" << endl;
+           }
+        }else if(TipoImovel==2){
+           for(j=0; j<imoveis.size(); j++){
+            imoveis[j]->ExibirApartamento();
+            cout << "\n" << endl;
+           }
+        }else if(TipoImovel==3){
+           for(j=0; j<imoveis.size(); j++){
+            imoveis[j]->ExibirTerreno();
+            cout << "\n" << endl;
+           }
+        }
 
     if(i>1){
-        cout << "Digite o indice do imovel que deseja modificar " << endl;
+        cout << "Digite o indice do imovel que deseja modificar: " << endl;
         cin >> indice;
     }else if(i==1){
         indice=1;
     }
 
+
     aux = BuscarIndice(Imoveis[indice-1] -> getTitulo());
 
-    if(aux.size()!=0){
-        imoveis[aux[indice - 1]]->editar();
-        cout << "Modificacao realizada com sucesso!" << endl;
-    }else{
-        cout << "ERRO" << endl;
+    if(TipoImovel==1){
+        if(aux.size()!=0){
+            imoveis[aux[indice - 1]]->EditarCasa();
+            cout << "Modificacao realizada com sucesso!" << endl;
+        }else{
+            cout << "ERRO" << endl;
+    }else if(TipoImovel==2){
+        if(aux.size()!=0){
+            imoveis[aux[indice - 1]]->EditarApartamento();
+            cout << "Modificacao realizada com sucesso!" << endl;
+        }else{
+            cout << "ERRO" << endl;
+    }else if(TipoImovel==3){
+        if(aux.size()!=0){
+            imoveis[aux[indice - 1]]->EditarTerreno();
+            cout << "Modificacao realizada com sucesso!" << endl;
+        }else{
+            cout << "ERRO" << endl;
     }
 }

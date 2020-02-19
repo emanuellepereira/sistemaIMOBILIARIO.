@@ -26,5 +26,5 @@ class Imovel {
 
         Endereco getEndereco();
 
-        void toStringImovel();
+        // void toStringImovel();
 };

@@ -41,7 +41,7 @@ void Terreno::ExibirTerreno(){
 
     cout << "Titulo: " << tituloAnuncio << endl;
     cout << "Categoria: " << categoria << endl;
-    cout << "Endereco: " << toStringEndereco() << endl;
+    cout << "Endereco: " << Endereco.toStringEndereco() << endl;
     cout << "Area do terreno: " << area << endl;
     cout << "Preco: " << preco << endl;
 }
